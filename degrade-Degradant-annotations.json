@@ -1,0 +1,1643 @@
+{
+  "projectName": "degrade-Degradant",
+  "projectType": "ImageClassifier",
+  "datasetName": "fadev2-dataset",
+  "datasetType": "Image",
+  "classification": "Public",
+  "numberAnnotationsDone": 204,
+  "numberAnnotationsToDo": 198,
+  "annotations": [
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953229214880,
+      "fileName": "img67.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955677043413,
+      "fileName": "img147.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956062300966,
+      "fileName": "img170.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956148443765,
+      "fileName": "img170.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951932674518,
+      "fileName": "img32.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954078870474,
+      "fileName": "img18.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954708929942,
+      "fileName": "img115.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952695343164,
+      "fileName": "img6.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955851488432,
+      "fileName": "img163.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954157136803,
+      "fileName": "img86.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953277402091,
+      "fileName": "img74.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955635540578,
+      "fileName": "img158.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951757158872,
+      "fileName": "img71.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956029976261,
+      "fileName": "img184.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954583029785,
+      "fileName": "img112.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956080263289,
+      "fileName": "img188.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956067059864,
+      "fileName": "img185.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956047293638,
+      "fileName": "img186.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953216429412,
+      "fileName": "img9.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953104967172,
+      "fileName": "img39.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955699519939,
+      "fileName": "img179.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952128978934,
+      "fileName": "img53.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955465419312,
+      "fileName": "img154.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952682635858,
+      "fileName": "img5.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955787566504,
+      "fileName": "img192.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953857821364,
+      "fileName": "img16.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955028659466,
+      "fileName": "img133.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953497030185,
+      "fileName": "img85.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956099392536,
+      "fileName": "img189.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954027791981,
+      "fileName": "img78.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954534265516,
+      "fileName": "img105.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952477061128,
+      "fileName": "img36.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955460234987,
+      "fileName": "img129.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952451978145,
+      "fileName": "img45.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955321105119,
+      "fileName": "img136.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955300388277,
+      "fileName": "img142.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952130424099,
+      "fileName": "img54.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952398064580,
+      "fileName": "img34.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953355568657,
+      "fileName": "img56.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953149658007,
+      "fileName": "img99.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952346226325,
+      "fileName": "img95.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951955691084,
+      "fileName": "img42.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951728433338,
+      "fileName": "img21.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955956981231,
+      "fileName": "img198.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953371245687,
+      "fileName": "img49.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955340411469,
+      "fileName": "img175.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955551662223,
+      "fileName": "img155.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955598957184,
+      "fileName": "img139.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954823672427,
+      "fileName": "img108.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955544250707,
+      "fileName": "img159.jpeg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953340829015,
+      "fileName": "img84.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951998101228,
+      "fileName": "img22.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952969181534,
+      "fileName": "img97.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954646352943,
+      "fileName": "img121.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953713753621,
+      "fileName": "img60.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954997164084,
+      "fileName": "img171.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952093581292,
+      "fileName": "img94.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954564290166,
+      "fileName": "img106.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954783161515,
+      "fileName": "img107.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951886570544,
+      "fileName": "img51.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952065920302,
+      "fileName": "img43.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954889751255,
+      "fileName": "img109.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953788010326,
+      "fileName": "img69.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953781939076,
+      "fileName": "img68.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953882411923,
+      "fileName": "img17.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953943000474,
+      "fileName": "img76.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955535379452,
+      "fileName": "img149.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954984566799,
+      "fileName": "img116.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952488445061,
+      "fileName": "img3.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954041803651,
+      "fileName": "img79.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955015059618,
+      "fileName": "img117.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955365176344,
+      "fileName": "img137.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953129736056,
+      "fileName": "img66.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953584155912,
+      "fileName": "img59.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954813771881,
+      "fileName": "img124.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952822053500,
+      "fileName": "img25.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955667749992,
+      "fileName": "img140.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956090208288,
+      "fileName": "img187.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954408196694,
+      "fileName": "img89.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955593197227,
+      "fileName": "img160.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953094673805,
+      "fileName": "img11.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955382658211,
+      "fileName": "img153.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952838555875,
+      "fileName": "img8.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955517440895,
+      "fileName": "img144.jpeg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955888427522,
+      "fileName": "img196.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953698025041,
+      "fileName": "img13.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952022740854,
+      "fileName": "img93.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955862349400,
+      "fileName": "img166.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955097760983,
+      "fileName": "img110.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955855217422,
+      "fileName": "img194.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956134703117,
+      "fileName": "img194.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956008265735,
+      "fileName": "img168.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955841567259,
+      "fileName": "img164.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954966586043,
+      "fileName": "img132.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955875807842,
+      "fileName": "img197.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953115190180,
+      "fileName": "img98.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951917867780,
+      "fileName": "img41.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954724055162,
+      "fileName": "img123.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954452425195,
+      "fileName": "img101.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955396400748,
+      "fileName": "img143.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955685677735,
+      "fileName": "img180.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955759276403,
+      "fileName": "img191.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952173110291,
+      "fileName": "img24.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956080371574,
+      "fileName": "img181.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956163021585,
+      "fileName": "img181.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952386285751,
+      "fileName": "img64.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953244238840,
+      "fileName": "img55.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954433626554,
+      "fileName": "img102.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955400896053,
+      "fileName": "img141.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955578052302,
+      "fileName": "img156.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953283111148,
+      "fileName": "img40.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954507551167,
+      "fileName": "img103.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955125226179,
+      "fileName": "img118.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952704855342,
+      "fileName": "img47.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951968290590,
+      "fileName": "img62.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953426166848,
+      "fileName": "img100.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952831652811,
+      "fileName": "img7.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955280754901,
+      "fileName": "img120.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953548454739,
+      "fileName": "img28.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952284662280,
+      "fileName": "img2.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951797769001,
+      "fileName": "img61.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955820226458,
+      "fileName": "img178.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956119919124,
+      "fileName": "img178.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952078736211,
+      "fileName": "img23.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952140578074,
+      "fileName": "img82.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953327110268,
+      "fileName": "img12.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953266223937,
+      "fileName": "img26.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955388542876,
+      "fileName": "img127.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955305902267,
+      "fileName": "img173.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953386275176,
+      "fileName": "img57.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955520628107,
+      "fileName": "img148.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952598549629,
+      "fileName": "img37.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954661149196,
+      "fileName": "img114.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956009070128,
+      "fileName": "img161.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951986319401,
+      "fileName": "img72.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954679390766,
+      "fileName": "img122.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955538041407,
+      "fileName": "img176.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954198034284,
+      "fileName": "img87.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955611023131,
+      "fileName": "img146.jpeg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956016903186,
+      "fileName": "img183.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954633087588,
+      "fileName": "img113.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954061210340,
+      "fileName": "img80.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955825910025,
+      "fileName": "img195.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955590649797,
+      "fileName": "img157.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953254706050,
+      "fileName": "img10.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955108939888,
+      "fileName": "img119.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955875544641,
+      "fileName": "img165.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955351047674,
+      "fileName": "img174.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952556576897,
+      "fileName": "img4.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953959475220,
+      "fileName": "img75.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955269054843,
+      "fileName": "img138.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952465010500,
+      "fileName": "img65.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952852387594,
+      "fileName": "img38.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955924474457,
+      "fileName": "img167.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955212527266,
+      "fileName": "img172.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954848525027,
+      "fileName": "img131.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953738707984,
+      "fileName": "img15.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952868826425,
+      "fileName": "img96.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953452138860,
+      "fileName": "img27.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952432524901,
+      "fileName": "img35.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956106584085,
+      "fileName": "img182.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956393815193,
+      "fileName": "img182.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955566720466,
+      "fileName": "img145.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954933053909,
+      "fileName": "img125.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953893393655,
+      "fileName": "img30.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954216315682,
+      "fileName": "img88.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955935083232,
+      "fileName": "img199.png",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951862014101,
+      "fileName": "img92.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955689756099,
+      "fileName": "img177.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955285114510,
+      "fileName": "img152.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954417250191,
+      "fileName": "img90.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953671760147,
+      "fileName": "img29.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955335627809,
+      "fileName": "img151.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952304845374,
+      "fileName": "img73.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952110331808,
+      "fileName": "img44.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954548369491,
+      "fileName": "img111.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952650161335,
+      "fileName": "img83.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956044782286,
+      "fileName": "img169.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956132911196,
+      "fileName": "img169.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954139135724,
+      "fileName": "img20.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955415481626,
+      "fileName": "img128.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955239115677,
+      "fileName": "img135.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953315311731,
+      "fileName": "img48.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954120448477,
+      "fileName": "img19.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953533332191,
+      "fileName": "img50.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952263180148,
+      "fileName": "img33.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953836087497,
+      "fileName": "img70.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664950819672728,
+      "fileName": "img1.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955970816717,
+      "fileName": "img162.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951843328303,
+      "fileName": "img91.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954003492415,
+      "fileName": "img77.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955477668664,
+      "fileName": "img130.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955270916397,
+      "fileName": "img126.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952044564147,
+      "fileName": "img52.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664950865364858,
+      "fileName": "img31.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664956108817322,
+      "fileName": "img190.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952504660962,
+      "fileName": "img46.jpg",
+      "annotation": {
+        "label": "aucun-rapport"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955147167298,
+      "fileName": "img134.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953768699480,
+      "fileName": "img14.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664951904356547,
+      "fileName": "img81.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664953514128741,
+      "fileName": "img58.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664952360275915,
+      "fileName": "img63.jpg",
+      "annotation": {
+        "label": "degrade"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664955670981929,
+      "fileName": "img150.png",
+      "annotation": {
+        "label": "degradant"
+      }
+    },
+    {
+      "nameIdentifier": "2",
+      "createDate": 638664954522211981,
+      "fileName": "img104.jpg",
+      "annotation": {
+        "label": "degradant"
+      }
+    }
+  ]
+}

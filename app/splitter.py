@@ -8,12 +8,11 @@ class ISplitter(ABC):
         ...
 
 class Splitter(ISplitter):
-    def __init__(self, images: list[np.array]):
+    def __init__(self, images: list[np.array], labels: list[str]):
         self.images = images
-        self.train = []
-        self.test = []
+        self.labels = labels
 
 
     def split(self, ratio: float):
-         self.train, self.test = train_test_split(self.images, train_size=ratio)
+         self.train_x, self.test_x, self.train_y, self.test_y = train_test_split(self.images, self.labels, train_size=ratio)
 

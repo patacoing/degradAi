@@ -15,8 +15,9 @@ class IPreprocessing(ABC):
 
     def preprocess(self):
         self.resize()
-        self.grayscale()
-        self.normalize()
+        # self.grayscale()
+        # self.normalize()
+        print(self.__class__.__name__.split("Preprocessing")[0])
 
 
 class OpenCvPreprocessing(IPreprocessing):
@@ -25,7 +26,7 @@ class OpenCvPreprocessing(IPreprocessing):
 
     def resize(self):
         tmp_images = [cv2.cvtColor(image, cv2.COLOR_BGR2RGB) for image in self.images]
-        self.images = [cv2.resize(image, (300, 3000)) for image in tmp_images]
+        self.images = [cv2.resize(image, (300, 300)) for image in tmp_images]
 
     def grayscale(self):
         images_pregray = [cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) for image in self.images]

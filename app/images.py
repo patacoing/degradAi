@@ -3,18 +3,6 @@ from abc import ABC
 import cv2
 import numpy as np
 
-
-class IFindFiles(ABC):
-    @classmethod
-    def find(cls, path: str) -> list[str]:
-        ...
-
-class FindFiles(IFindFiles):
-    @classmethod
-    def find(cls, path: str) -> list[str]:
-        return glob.glob(f"{path}/**")
-
-
 class ILoader(ABC):
     @classmethod
     def load(cls, file_path: str):
@@ -27,16 +15,15 @@ class OpenCvLoader:
 
 
 class IImageLoader(ABC):
-    def __init__(self, path: str, files_finder: IFindFiles = FindFiles(), loader: ILoader = OpenCvLoader()):
+    def __init__(self, path: str, loader: ILoader = OpenCvLoader()):
         self.path = path
-        self.files_finder = files_finder
         self.images = []
         self.loader = loader
 
-    def load(self):
+    def load(self, filenames: list[str]):
         ...
 
 
 class ImageLoader(IImageLoader):
-    def load(self):
-        self.images = [self.loader.load(file) for file in self.files_finder.find(self.path)]
+    def load(self, filenames: list[str]):
+        self.images = [self.loader.load(f"{self.path}/{filename}") for filename in filenames]
