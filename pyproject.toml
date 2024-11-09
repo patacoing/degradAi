@@ -7,13 +7,14 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "3.10.15"
 opencv-python = "^4.10.0.84"
 pytest = "^8.3.3"
 scikit-learn = "^1.5.2"
 keras = "^3.6.0"
 ecotag-sdk = "^0.1.2"
 tensorflow-macos = "^2.16.2"
+tensorflow-metal = "^1.1.0"
 
 
 [build-system]

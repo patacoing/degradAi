@@ -1,23 +1,27 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 import cv2
 import numpy as np
 
 
 class IPreprocessing(ABC):
+    @abstractmethod
     def resize(self):
-        ...
+        raise NotImplementedError
 
+    @abstractmethod
     def grayscale(self):
-        ...
+        raise NotImplementedError
 
+    @abstractmethod
     def normalize(self):
-        ...
+        raise NotImplementedError
 
-    def preprocess(self):
+    def preprocess(self) -> np.array:
         self.resize()
-        # self.grayscale()
-        # self.normalize()
-        print(self.__class__.__name__.split("Preprocessing")[0])
+        self.grayscale()
+        self.normalize()
+
+        return self.images
 
 
 class OpenCvPreprocessing(IPreprocessing):
@@ -26,11 +30,11 @@ class OpenCvPreprocessing(IPreprocessing):
 
     def resize(self):
         tmp_images = [cv2.cvtColor(image, cv2.COLOR_BGR2RGB) for image in self.images]
-        self.images = [cv2.resize(image, (300, 300)) for image in tmp_images]
+        self.images = np.array([cv2.resize(image, (300, 300)) for image in tmp_images])
 
     def grayscale(self):
         images_pregray = [cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) for image in self.images]
-        self.images = [cv2.cvtColor(image, cv2.COLOR_BGR2RGB) for image in images_pregray]
+        self.images = np.array([cv2.cvtColor(image, cv2.COLOR_BGR2RGB) for image in images_pregray])
 
     def normalize(self):
-        self.images = [image / 255.0 for image in self.images]
+        self.images = self.images / 255
