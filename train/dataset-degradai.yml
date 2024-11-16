@@ -6,6 +6,6 @@ $schema: https://azuremlschemas.azureedge.net/latest/data.schema.json
 # ADLS gen2: abfss://<file_system>@<account_name>.dfs.core.windows.net/<path>/
 # Datastore: azureml://datastores/<data_store_name>/paths/<path>
 type: uri_folder
-name: degrade-labels
-description: Degrade Degradant and Aucun-Rapport Labels
-path: ./labels
+name: degrade-datasets
+description: Degrade Degradant and Aucun-Rapport Dataset
+path: ../data/

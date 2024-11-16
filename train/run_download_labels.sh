@@ -1,6 +1,6 @@
 resource_group=$1
 workspace_name=$2
-dataset_name=degradai_others_labels
+dataset_name=fadev2-dataset
 dataset_version=1
 
 echo "Init labels dataset"

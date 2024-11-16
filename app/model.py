@@ -24,7 +24,7 @@ class Model:
         labels, filenames = load_labels_and_filenames(annotations_path, mapping)
 
         image_loader = ImageLoader(path)
-        images = image_loader.load(filenames)
+        images, filenames = image_loader.load()
 
         open_cv_preprocessing = OpenCvPreprocessing(images)
         images = open_cv_preprocessing.preprocess()
@@ -43,7 +43,7 @@ class Model:
     @staticmethod
     def _load_image(path: str, filename: str) -> np.array:
         loader = ImageLoader(path)
-        image = loader.load([filename])[0]
+        image = loader.load()[0]
         return image
 
     @staticmethod

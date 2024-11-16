@@ -29,8 +29,8 @@ class OpenCvPreprocessing(IPreprocessing):
         self.images = images
 
     def resize(self):
-        tmp_images = [cv2.cvtColor(image, cv2.COLOR_BGR2RGB) for image in self.images]
-        self.images = np.array([cv2.resize(image, (300, 300)) for image in tmp_images])
+        tmp = [cv2.cvtColor(image, cv2.COLOR_BGR2RGB) for image in self.images]
+        self.images = np.array([cv2.resize(image, (300, 300)) for image in tmp])
 
     def grayscale(self):
         images_pregray = [cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) for image in self.images]

@@ -2,6 +2,7 @@ import json
 from abc import ABC, abstractmethod
 import cv2
 import numpy as np
+import os
 
 
 class ILoader(ABC):
@@ -29,15 +30,35 @@ class IImageLoader(ABC):
 
 
 class ImageLoader(IImageLoader):
-    def load(self, filenames: list[str]) -> list[np.array]:
-        return [self.loader.load(f"{self.path}/{filename}") for filename in filenames]
+    def load(self) -> list[tuple[np.array, str]]:
+        filenames = os.listdir(self.path)
+        images = []
+
+        for filename in filenames:
+            if filename == ".DS_Store":
+                continue
+
+            if os.path.isfile(f"{self.path}/{filename}"):
+                images.append(self.loader.load(f"{self.path}/{filename}"))
+
+        return images, filenames
 
 
 def load_labels_and_filenames(annotation_path: str, mapping: dict[str, int]) -> tuple[list[str], list[str]]:
     with open(annotation_path, "r") as file:
         data_json = json.load(file)
-        labels = [annotation["annotation"]["label"] for annotation in data_json["annotations"]]
-        filenames = [label["fileName"] for label in data_json["annotations"]]
+        labels = []
+        filenames = []
 
-    labels = np.array([mapping[label] for label in labels])
+        for annotation in data_json["annotations"]:
+            filename = annotation["fileName"]
+            label = annotation["annotation"]["label"]
+
+            if filename in filenames:
+                continue
+
+            labels.append(mapping[label])
+            filenames.append(filename)
+
+    labels = np.array(labels)
     return labels, filenames

@@ -1,0 +1,5 @@
+*.zip
+degradai.keras
+data/
+app/degradai.keras
+wow/

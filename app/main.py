@@ -27,6 +27,6 @@ else:
     model.save("degradai.keras")
 
 
-predictions, label = model.predict("wow", "marius.jpg")
+predictions, label = model.predict("wow", "random.jpg")
 
 print(predictions, label)
