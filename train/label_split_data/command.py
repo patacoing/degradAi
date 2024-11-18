@@ -32,7 +32,7 @@ mapping = {
     "degradant": 1,
     "aucun-rapport": 2
 }
-labels, filenames = load_labels_and_filenames(labels_input, mapping)
+labels, filenames = load_labels_and_filenames(f"{labels_input}/degrade-Degradant-classification-annotations.json", mapping)
 print("labels loaded")
 
 print("splitting data")
@@ -56,11 +56,11 @@ for index, image in enumerate(test_images):
 print("images saved")
 
 print("saving labels")
-with open(train_labels_output, "w") as file:
+with open(f"{train_labels_output}/labels.txt", "w") as file:
     for label in train_labels:
         file.write(f"{label}\n")
 
-with open(test_labels_output, "w") as file:
+with open(f"{test_labels_output}/labels.txt", "w") as file:
     for label in test_labels:
         file.write(f"{label}\n")
 print("labels saved")

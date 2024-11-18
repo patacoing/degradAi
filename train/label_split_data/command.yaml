@@ -29,7 +29,7 @@ environment:
     path: ../../
     dockerfile_path: ./Dockerfile
 
-code: ./
+code: ../../
 command: >-
   python -m train.label_split_data.command
   --labels_input ${{inputs.labels_input}}
