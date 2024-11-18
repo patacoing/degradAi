@@ -55,6 +55,17 @@ class ImageLoader(IImageLoader):
 
         return images, filenames
 
+def load_labels_and_filesnames_from_txt(path: str) -> tuple[list[str], list[str]]:
+    with open(path, "r") as file:
+        data = file.readlines()
+        labels = []
+
+        for line in data:
+            line = line.strip()
+            label = line
+            labels.append(label)
+
+    return labels
 
 def load_labels_and_filenames(
     annotation_path: str,

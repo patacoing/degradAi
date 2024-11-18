@@ -12,6 +12,10 @@ inputs:
     type: uri_folder
   train_labels_input:
     type: uri_folder
+  test_images_input:
+    type: uri_folder
+  test_labels_input:
+    type: uri_folder
 
 outputs:
   model_output:
@@ -19,13 +23,13 @@ outputs:
 
 environment:
   name: train_environment
-  docker:
-    path: ../../
-    dockerfile_path: ./Dockerfile
+  image: lampe59/degradai:latest
 
 code: ../../
 command: >-
   python -m train.train.command
   --train_images_input ${{inputs.train_images_input}}
   --train_labels_input ${{inputs.train_labels_input}}
+  --test_images_input ${{inputs.test_images_input}}
+  --test_labels_input ${{inputs.test_labels_input}}
   --model_output ${{outputs.model_output}}

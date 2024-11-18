@@ -85,6 +85,8 @@ def azureml_pipeline(
     train_data = train_step(
         train_labels_input=label_split_data.outputs.train_labels_output,
         train_images_input=label_split_data.outputs.train_images_output,
+        test_labels_input=label_split_data.outputs.test_labels_output,
+        test_images_input=label_split_data.outputs.test_images_output,
     )
     #
     # #Fourth step : test

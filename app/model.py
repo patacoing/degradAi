@@ -2,7 +2,7 @@ import numpy as np
 from keras import Sequential
 from keras.src.saving import load_model
 
-from app.images import ImageLoader, load_labels_and_filenames
+from app.images import ImageLoader, load_labels_and_filenames, load_labels_and_filesnames_from_txt
 from app.preprocessing import OpenCvPreprocessing
 from app.splitter import Splitter
 from app.training import Training
@@ -20,23 +20,30 @@ class Model:
     def save(self, path: str):
         self.model.save(path)
 
-    def train(self, annotations_path: str, path: str, mapping: dict[str, int]):
-        labels, filenames = load_labels_and_filenames(annotations_path, mapping)
+    def train(self, train_annotations_path: str, train_path: str, test_annotations_path: str, test_path: str, mapping: dict[str, int]):
+        train_labels = load_labels_and_filesnames_from_txt(train_annotations_path)
+        test_labels = load_labels_and_filesnames_from_txt(test_annotations_path)
 
-        image_loader = ImageLoader(path)
-        images, filenames = image_loader.load()
+        image_loader = ImageLoader(train_path)
+        train_images, filenames = image_loader.load()
 
-        open_cv_preprocessing = OpenCvPreprocessing(images)
-        images = open_cv_preprocessing.preprocess()
+        image_loader = ImageLoader(test_path)
+        test_images, filenames = image_loader.load()
 
-        splitter = Splitter(images, labels)
-        splitter.split(0.8)
-        splitter.to_categorical(len(mapping.keys()))
+        open_cv_preprocessing = OpenCvPreprocessing(train_images)
+        train_images = open_cv_preprocessing.preprocess()
 
-        train_x, train_y, test_x, test_y = splitter.train_x, splitter.train_y, splitter.test_x, splitter.test_y
+        open_cv_preprocessing = OpenCvPreprocessing(test_images)
+        test_images = open_cv_preprocessing.preprocess()
+
+        # splitter = Splitter(images, labels)
+        # splitter.split(0.8)
+        # splitter.to_categorical(len(mapping.keys()))
+
+        train_x, train_y, test_x, test_y = train_images, train_labels, test_images, test_labels
 
         training = Training(train_x, train_y, test_x, test_y)
-        model = training.train(epochs=20, batch_size=32)
+        model = training.train(epochs=1, batch_size=32)
 
         self.model = model
 
