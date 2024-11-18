@@ -3,12 +3,14 @@ type: command
 
 name: train
 display_name: Train
-description: Train model on train+evaluate set
+description: Train model
 version: 0.0.1
 is_deterministic: true
 
 inputs:
-  split_images_input:
+  train_images_input:
+    type: uri_folder
+  train_labels_input:
     type: uri_folder
 
 outputs:
@@ -18,10 +20,12 @@ outputs:
 environment:
   name: train_environment
   docker:
-    path: ./Dockerfile
+    path: ../../
+    dockerfile_path: ./Dockerfile
 
-code: ./
+code: ../../
 command: >-
-  python command.py
-  --split_images_input ${{inputs.split_images_input}}
+  python -m train.train.command
+  --train_images_input ${{inputs.train_images_input}}
+  --train_labels_input ${{inputs.train_labels_input}}
   --model_output ${{outputs.model_output}}

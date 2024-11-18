@@ -81,10 +81,11 @@ def azureml_pipeline(
     )
 
     #Third step : train
-    # train_step = load_component(source="train/command.yaml")
-    # train_data = train_step(
-    #     split_images_input=label_split_data.outputs.split_images_output
-    # )
+    train_step = load_component(source="train/command.yaml")
+    train_data = train_step(
+        train_labels_input=label_split_data.outputs.train_labels_output,
+        train_images_input=label_split_data.outputs.train_images_output,
+    )
     #
     # #Fourth step : test
     # test_step = load_component(source="test/command.yaml")
