@@ -46,9 +46,9 @@ class Model:
         image = preprocessing.preprocess()[0]
         return image
 
-    def predict(self, image: np.array) -> tuple[list[float], str]:
+    def predict(self, image: np.array, verbose: int = 0) -> tuple[list[float], str]:
         image_preprocessed = self._preprocess_image(image)
-        predictions = self.model.predict(image_preprocessed.reshape(1, 300, 300, 3))[0]
+        predictions = self.model.predict(image_preprocessed.reshape(1, 300, 300, 3), verbose=verbose)[0]
 
         return predictions, self.labels[np.argmax(predictions)]
 
