@@ -41,20 +41,23 @@ class Model:
         self.model = model
 
     @staticmethod
-    def _load_image(path: str, filename: str) -> np.array:
-        loader = ImageLoader(path)
-        image = loader.load()[0]
-        return image
-
-    @staticmethod
     def _preprocess_image(image: np.array) -> np.array:
         preprocessing = OpenCvPreprocessing([image])
         image = preprocessing.preprocess()[0]
         return image
 
-    def predict(self, image_path: str, image_name: str) -> tuple[list[float], str]:
-        image = self._load_image(image_path, image_name)
+    def predict(self, image: np.array) -> tuple[list[float], str]:
         image_preprocessed = self._preprocess_image(image)
         predictions = self.model.predict(image_preprocessed.reshape(1, 300, 300, 3))[0]
 
         return predictions, self.labels[np.argmax(predictions)]
+
+
+model = Model(["degrade", "degradant", "aucun-rapport"])
+model.load("degradai.keras")
+
+def get_model() -> Model:
+    return model
+
+def get_labels() -> list[str]:
+    return model.labels
