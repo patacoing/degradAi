@@ -26,6 +26,12 @@ pydantic = "^2.9.2"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[tool.poetry.group.macos]
+optional = true
+
+[tool.poetry.group.macos.dependencies]
 tensorflow-metal = "^1.1.0"
 tensorflow-macos = "^2.16.2"
 
