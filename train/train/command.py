@@ -25,7 +25,12 @@ mapping = {
 
 model = Model(list(mapping.keys()))
 
-model.train(Path(f"{train_labels_input}/labels.txt"), Path(train_images_input), Path(f"{test_labels_input}/labels.txt"), Path(test_images_input), mapping)
+model.train(
+    Path(f"{train_labels_input}/labels.txt"),
+    Path(train_images_input),
+    Path(f"{test_labels_input}/labels.txt"),
+    Path(test_images_input),
+)
 
 Path(model_output).mkdir(parents=True, exist_ok=True)
 

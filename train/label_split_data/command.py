@@ -1,7 +1,7 @@
 import argparse
 from PIL import Image
 
-from app.images import ImageLoader, load_labels_and_filenames
+from app.images import ImageLoader, load_labels_and_filenames, isfile, listfiles
 from app.splitter import Splitter
 
 
@@ -23,7 +23,7 @@ test_images_output = args.test_images_output
 
 print("loading images")
 image_loader = ImageLoader(images_input)
-images, _ = image_loader.load()
+images, _ = image_loader.load(is_file=isfile, list_files=listfiles)
 print("images loaded")
 
 print("loading labels")

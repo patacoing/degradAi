@@ -108,7 +108,7 @@ def azureml_pipeline(
 
     return {
         # "output": output.outputs.main_output,
-        "output": preprocess.outputs.images_output,
+        "output": train_data.outputs.model_output,
     }
 
 
@@ -137,49 +137,49 @@ pipeline_job = ml_client.jobs.create_or_update(
 
 ml_client.jobs.stream(pipeline_job.name)
 
-registered_dataset = register_extracted_dataset(
-    ml_client,
-    custom_output_path,
-    {**tags, experiment_id: experiment_id},
+# registered_dataset = register_extracted_dataset(
+#     ml_client,
+#     custom_output_path,
+#     {**tags, experiment_id: experiment_id},
+# )
+#
+# if registered_dataset is not None:
+#     create_project = DownloadAndCreateLabellingProject(
+#         subscription_id=subscription_id,
+#         resource_group_name=resource_group_name,
+#         workspace_name=workspace_name,
+#     )
+#
+#     async def execute_async():
+#         await download_and_create_labelling_project(
+#             registered_dataset.dataset_version,
+#             registered_dataset.dataset_name,
+#             create_project,
+#         )
+#
+#     loop = asyncio.get_event_loop()
+#     loop.run_until_complete(execute_async())
+
+model_name = "degradai"
+try:
+    model_version = str(len(list(ml_client.models.list(model_name))) + 1)
+except:
+    model_version = "1"
+
+file_model = Model(
+    version=model_version,
+    path=custom_output_path + "degradai.keras",
+    type=AssetTypes.CUSTOM_MODEL,
+    name=model_name,
+    tags={**tags, "experiment_id": experiment_id},
+    description="Model created from azureML.",
+)
+saved_model = ml_client.models.create_or_update(file_model)
+
+print(
+    f"Model with name {saved_model.name} was registered to workspace, the model version is {saved_model.version}."
 )
 
-if registered_dataset is not None:
-    create_project = DownloadAndCreateLabellingProject(
-        subscription_id=subscription_id,
-        resource_group_name=resource_group_name,
-        workspace_name=workspace_name,
-    )
-
-    async def execute_async():
-        await download_and_create_labelling_project(
-            registered_dataset.dataset_version,
-            registered_dataset.dataset_name,
-            create_project,
-        )
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(execute_async())
-
-# model_name = "degradai"
-# try:
-#     model_version = str(len(list(ml_client.models.list(model_name))) + 1)
-# except:
-#     model_version = "1"
-#
-# file_model = Model(
-#     version=model_version,
-#     path=custom_output_path + "model",
-#     type=AssetTypes.CUSTOM_MODEL,
-#     name=model_name,
-#     tags={**tags, "experiment_id": experiment_id},
-#     description="Model created from azureML.",
-# )
-# saved_model = ml_client.models.create_or_update(file_model)
-#
-# print(
-#     f"Model with name {saved_model.name} was registered to workspace, the model version is {saved_model.version}."
-# )
-#
 # integration_dataset_name = "degradai-integration"
 # integration_dataset = Data(
 #     name="degradai-integration",
@@ -192,15 +192,13 @@ if registered_dataset is not None:
 # print(
 #     f"Dataset with name {integration_dataset.name} was registered to workspace, the dataset version is {integration_dataset.version}"
 # )
-#
-# output_data = {
-#     "model_version": saved_model.version,
-#     "model_name": saved_model.name,
-#     "integration_dataset_name": integration_dataset.name,
-#     "integration_dataset_version": integration_dataset.version,
-#     "experiment_id": experiment_id,
-# }
-#
-# print(json.dumps(output_data))
 
-print("finito")
+output_data = {
+    "model_version": saved_model.version,
+    "model_name": saved_model.name,
+    # "integration_dataset_name": integration_dataset.name,
+    # "integration_dataset_version": integration_dataset.version,
+    "experiment_id": experiment_id,
+}
+
+print(json.dumps(output_data))

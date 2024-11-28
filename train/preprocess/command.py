@@ -3,9 +3,8 @@ from pathlib import Path
 from PIL import Image
 import mlflow
 
-from app.images import ImageLoader
+from app.images import ImageLoader, isfile, listfiles
 from app.preprocessing import OpenCvPreprocessing
-from .directory_hash import hash_dir
 
 parser = argparse.ArgumentParser("preprocess")
 parser.add_argument("--images_input", type=str)
@@ -19,7 +18,7 @@ hash_output = args.hash_output
 
 print("loading images")
 image_loader = ImageLoader(images_input)
-images, filenames = image_loader.load()
+images, filenames = image_loader.load(is_file=isfile, list_files=listfiles)
 print("images loaded")
 
 print("preprocessing images")
@@ -35,13 +34,8 @@ for image, filename in zip(images, filenames):
 print("images saved")
 
 
-computed_hash = hash_dir(images_output)
-with open(str(Path(hash_output) / "hash.txt"), "w") as file:
-    file.write(computed_hash)
-
 console_output = f""" 
-    number_images_output: {len(filenames)}
-    computed_hash: {computed_hash}"""
+    number_images_output: {len(filenames)}"""
 
 # mlflow.log_metric("number_files_input", 1)
 # mlflow.log_metric("number_images_output", 2)

@@ -1,15 +1,18 @@
 from abc import ABC, abstractmethod
+
+import numpy as np
 from keras import Sequential
 from keras.src.applications.vgg16 import VGG16
 from keras.src.layers import Flatten, Dense, Dropout
+from keras.src.utils import to_categorical
 
 
 class ITraining(ABC):
     def __init__(self, train_x, train_y, test_x, test_y):
-        self.train_x = train_x
-        self.train_y = train_y
-        self.test_x = test_x
-        self.test_y = test_y
+        self.train_x = np.array(train_x)
+        self.train_y = to_categorical(np.array(train_y, dtype=int), num_classes=3)
+        self.test_x = np.array(test_x)
+        self.test_y = to_categorical(np.array(test_y, dtype=int), num_classes=3)
 
     @abstractmethod
     def train(self, epochs: int, batch_size: int) -> Sequential:
