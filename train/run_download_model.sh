@@ -16,5 +16,6 @@ poetry run python azureml_run_download_model.py \
     --download_path "$DOWNLOAD_PATH"
 
 cd $DOWNLOAD_PATH
-cp $MODEL_NAME/*.keras ./
+mkdir -p model/
+cp $MODEL_NAME/*.keras model/
 rm -rf $MODEL_NAME

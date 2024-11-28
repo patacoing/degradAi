@@ -58,7 +58,7 @@ class Model:
 
 
 model = Model(["degrade", "degradant", "aucun-rapport"])
-# model.load("degradai.keras")
+model.load("app/model/degradai.keras")
 
 def get_model() -> Model:
     return model
