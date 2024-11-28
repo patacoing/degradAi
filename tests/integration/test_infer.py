@@ -13,7 +13,7 @@ def load_file(file_path: str) -> bytes:
     with open(file_path, "rb") as file:
         return file.read()
 
-@pytest.skip("Skip this test because the model is not trained")
+@pytest.mark.skip("Skip this test because the model is not trained")
 @pytest.mark.parametrize(
     "filename, expected_classname",
     [
