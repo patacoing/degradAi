@@ -118,7 +118,7 @@ pipeline_job = azureml_pipeline(
         type=AssetTypes.URI_FOLDER,
     ),
     labels_input_data=Input(
-        path="azureml:degrade_labels:1",
+        path="azureml:degrade-labels:1",
         type=AssetTypes.URI_FOLDER,
     ),
 )
