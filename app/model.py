@@ -1,6 +1,7 @@
 import numpy as np
 from keras import Sequential
 from keras.src.saving import load_model
+from pathlib import Path
 
 from app.images import ImageLoader, load_labels_and_filenames, load_labels_and_filesnames_from_txt, isfile, listfiles
 from app.preprocessing import OpenCvPreprocessing
@@ -58,7 +59,11 @@ class Model:
 
 
 model = Model(["degrade", "degradant", "aucun-rapport"])
-# model.load("app/model/degradai.keras")
+model_path = Path(__file__).resolve().parent / "model" / "degradai.keras"
+if model_path.exists():
+    model.load(model_path)
+else:
+    print("Model not found")
 
 def get_model() -> Model:
     return model
