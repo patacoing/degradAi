@@ -15,6 +15,7 @@ env:
 jobs:
     ml-pipeline:
       runs-on: ubuntu-latest
+      environment: degradai
       steps:
       - uses: actions/checkout@v4
 
