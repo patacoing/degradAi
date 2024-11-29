@@ -1,23 +1,12 @@
 import argparse
-
-import asyncio
 from pathlib import Path
-
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
-
 from azure.ai.ml import MLClient, Input, Output, load_component
 from azure.ai.ml.dsl import pipeline
 from azure.ai.ml.entities import Model
-from azure.ai.ml.constants import AssetTypes, InputOutputModes
-from azure.ai.ml.entities import Data
+from azure.ai.ml.constants import AssetTypes
 from azure.ai.ml.entities import AmlCompute
-
-from extraction_dataset import register_extracted_dataset
-from create_labelling_project import DownloadAndCreateLabellingProject, download_and_create_labelling_project
-
-
 import uuid
-
 import json
 
 
@@ -82,7 +71,6 @@ def azureml_pipeline(
         images_input=preprocess.outputs.images_output,
     )
 
-    #Third step : train
     train_step = load_component(source="train/command.yaml")
     train_data = train_step(
         train_labels_input=label_split_data.outputs.train_labels_output,
@@ -90,26 +78,8 @@ def azureml_pipeline(
         test_labels_input=label_split_data.outputs.test_labels_output,
         test_images_input=label_split_data.outputs.test_images_output,
     )
-    #
-    # #Fourth step : test
-    # test_step = load_component(source="test/command.yaml")
-    # test_data = test_step(
-    #     model_input=train_data.outputs.model_output,
-    #     integration_input=label_split_data.outputs.split_integration_output,
-    #     images_input=label_split_data.outputs.split_images_output,
-    # )
-    #
-    # #Fifth step : output
-    # output_step = load_component(source="output/command.yaml")
-    # output = output_step(
-    #     extraction_hash_input=extraction.outputs.hash_output,
-    #     extraction_images_input=extraction.outputs.images_output,
-    #     model_input=test_data.outputs.model_output,
-    #     integration_input=test_data.outputs.integration_output,
-    # )
 
     return {
-        # "output": output.outputs.main_output,
         "output": train_data.outputs.model_output,
     }
 
@@ -139,29 +109,6 @@ pipeline_job = ml_client.jobs.create_or_update(
 
 ml_client.jobs.stream(pipeline_job.name)
 
-# registered_dataset = register_extracted_dataset(
-#     ml_client,
-#     custom_output_path,
-#     {**tags, experiment_id: experiment_id},
-# )
-#
-# if registered_dataset is not None:
-#     create_project = DownloadAndCreateLabellingProject(
-#         subscription_id=subscription_id,
-#         resource_group_name=resource_group_name,
-#         workspace_name=workspace_name,
-#     )
-#
-#     async def execute_async():
-#         await download_and_create_labelling_project(
-#             registered_dataset.dataset_version,
-#             registered_dataset.dataset_name,
-#             create_project,
-#         )
-#
-#     loop = asyncio.get_event_loop()
-#     loop.run_until_complete(execute_async())
-
 model_name = "degradai"
 try:
     model_version = str(len(list(ml_client.models.list(model_name))) + 1)
@@ -182,31 +129,17 @@ print(
     f"Model with name {saved_model.name} was registered to workspace, the model version is {saved_model.version}."
 )
 
-# integration_dataset_name = "degradai-integration"
-# integration_dataset = Data(
-#     name="degradai-integration",
-#     path=custom_output_path + "integration",
-#     type=AssetTypes.URI_FOLDER,
-#     description="Integration dataset for degradai",
-#     tags={**tags, "experiment_id": experiment_id},
-# )
-# integration_dataset = ml_client.data.create_or_update(integration_dataset)
-# print(
-#     f"Dataset with name {integration_dataset.name} was registered to workspace, the dataset version is {integration_dataset.version}"
-# )
-
 output_data = {
     "model_version": saved_model.version,
     "model_name": saved_model.name,
-    # "integration_dataset_name": integration_dataset.name,
-    # "integration_dataset_version": integration_dataset.version,
     "experiment_id": experiment_id,
 }
 
-app_path = Path(__file__).parent / "app/model"
+
+app_path = Path(__file__).parent.resolve().parent / "app/model"
 app_path.mkdir(exist_ok=True)
 
 with open(app_path / "model_version", "w") as f:
-    f.write(saved_model.version)
+    f.write(str(output_data["model_version"]))
 
 print(json.dumps(output_data))
