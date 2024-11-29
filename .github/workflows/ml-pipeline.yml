@@ -34,9 +34,9 @@ jobs:
             poetry install
 
       - name: azure login
-        uses: azure/login@v2
+        uses: azure/login@v1
         with:
-          creds: "${{secrets.AZURE_CREDENTIALS}}"
+          creds: ${{secrets.AZURE_CREDENTIALS}}
 
       - name: Run pipeline
         run: |
