@@ -114,7 +114,7 @@ def azureml_pipeline(
 
 pipeline_job = azureml_pipeline(
     images_input_data=Input(
-        path="azureml:degrade-datasets:2",
+        path="azureml:degrade-datasets:1",
         type=AssetTypes.URI_FOLDER,
     ),
     labels_input_data=Input(
