@@ -68,7 +68,7 @@ jobs:
       run: |
         MODEL_VERSION=3
         echo "Downloading model version $MODEL_VERSION"
-        ./run_download_model.sh $MODEL_VERSION ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }} 
+        ./run_download_model.sh $MODEL_VERSION ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }} 
 
     - name: Upload Model Build Artifact
       uses: actions/upload-artifact@v3
