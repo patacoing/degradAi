@@ -33,6 +33,9 @@ jobs:
             python -m pip install poetry
             poetry install
 
+      - name: azure cli version
+        run: az --version
+
       - name: azure login
         uses: azure/login@v1
         with:
