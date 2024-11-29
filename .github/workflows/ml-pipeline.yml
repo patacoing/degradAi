@@ -1,9 +1,6 @@
-name: ml-pipeline.yml
+name: ML Pipeline
 on:
-  workflow_run:
-    workflows: [CI]
-    types:
-      - completed
+  push:
 
 env:
   AZURE_RESOURCE_GROUP: "degradai-cpr"
@@ -13,10 +10,10 @@ env:
 
 
 jobs:
-    ml-pipeline:
-      runs-on: ubuntu-latest
-      environment: degradai
-      steps:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
       - uses: actions/checkout@v4
 
       - name: Set up Python 3.12.6
@@ -24,9 +21,26 @@ jobs:
         with:
           python-version: "3.10.15"
 
-#      - name: Install Azure CLI
-#        run: |
-#          curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
+          poetry install --with dev
+
+      - name: Run tests
+        run: poetry run pytest
+
+    ml-pipeline:
+      runs-on: ubuntu-latest
+      environment: degradai
+
+      steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.12.6
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10.15"
 
       - name: Install dependencies
         run: |

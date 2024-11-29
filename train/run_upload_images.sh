@@ -1,7 +1,7 @@
 resource_group=$1
 workspace_name=$2
 dataset_name=degradais_degradants_others
-dataset_version=2
+dataset_version=1
 
 echo "Init images dataset"
 

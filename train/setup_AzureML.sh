@@ -15,3 +15,7 @@ az ml workspace create -n "$AZURE_ML_WORKSPACE_NAME" -g $AZURE_RESOURCE_GROUP_NA
 # Initialize Azure ML Labels Dataset
 chmod +x ./run_download_labels.sh
 ./run_download_labels.sh "$AZURE_RESOURCE_GROUP_NAME" "$AZURE_ML_WORKSPACE_NAME"
+
+# Initialize Azure ML Images Dataset
+chmod +x ./run_upload_images.sh
+./run_upload_images.sh "$AZURE_RESOURCE_GROUP_NAME" "$AZURE_ML_WORKSPACE_NAME"
