@@ -9,12 +9,10 @@ from app.preprocessing import OpenCvPreprocessing
 parser = argparse.ArgumentParser("preprocess")
 parser.add_argument("--images_input", type=str)
 parser.add_argument("--images_output", type=str)
-parser.add_argument("--hash_output", type=str)
 
 args = parser.parse_args()
 images_input = args.images_input
 images_output = args.images_output
-hash_output = args.hash_output
 
 print("loading images")
 image_loader = ImageLoader(images_input)

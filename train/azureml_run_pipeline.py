@@ -1,6 +1,8 @@
 import argparse
 
 import asyncio
+from pathlib import Path
+
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 from azure.ai.ml import MLClient, Input, Output, load_component
@@ -200,5 +202,11 @@ output_data = {
     # "integration_dataset_version": integration_dataset.version,
     "experiment_id": experiment_id,
 }
+
+app_path = Path(__file__).parent / "app/model"
+app_path.mkdir(exist_ok=True)
+
+with open(app_path / "model_version", "w") as f:
+    f.write(saved_model.version)
 
 print(json.dumps(output_data))

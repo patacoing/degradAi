@@ -14,8 +14,6 @@ inputs:
 outputs:
   images_output:
     type: uri_folder
-  hash_output:
-    type: uri_folder
 
 environment:
   name: preprocess_environment
@@ -26,4 +24,3 @@ command: >-
   python -m train.preprocess.command
   --images_input ${{inputs.images_input}}
   --images_output ${{outputs.images_output}}
-  --hash_output ${{outputs.hash_output}}

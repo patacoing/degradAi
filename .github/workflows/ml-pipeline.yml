@@ -33,6 +33,7 @@ jobs:
   ml-pipeline:
     runs-on: ubuntu-latest
     environment: degradai
+    needs: test
 
     steps:
     - uses: actions/checkout@v4
@@ -48,31 +49,29 @@ jobs:
           python -m pip install poetry
           poetry install
 
-    - name: azure cli version
-      run: az --version
-
     - name: azure login
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
 
+    - name: setup azure
+      working-directory: train
+      run: ./setup_AzureML.sh ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }}
+
     - name: Run pipeline
-      run: |
-        cd train
-        ./setup_AzureML.sh ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }}
-        ./run_AzureML.sh ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ env.AZURE_TAGS }} 
+      working-directory: train
+      run: ./run_AzureML.sh ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ env.AZURE_TAGS }}
 
     - name: Download model
       working-directory: train
       env:
         DOWNLOAD_PATH: "../app"
       run: |
-        ./run_download_model.sh ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }} 
+        MODEL_VERSION=$(cat ../app/model/model_version)
+        ./run_download_model.sh $MODEL_VERSION ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }} 
 
     - name: Upload Model Build Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: Publish model
+        name: degradai-model
         path: app/model
-
-
