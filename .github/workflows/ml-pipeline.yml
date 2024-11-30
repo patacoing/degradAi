@@ -85,6 +85,9 @@ jobs:
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
 
+    - name: Install Azure CLI ML extension
+      run: az extension add --name ml
+
 #    - name: setup azure
 #      working-directory: train
 #      run: ./setup_AzureML.sh ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }}
@@ -108,18 +111,15 @@ jobs:
       id: cz
       uses: commitizen-tools/commitizen-action@master
       with:
-#        github_token: ${{ secrets.GIT_TOKEN }}
+        github_token: ${{ secrets.GIT_TOKEN }}
         changelog_increment_filename: body.md
-        push: false
+        push: true
 
-    - name: List files
-      run: ls
-#
-#    - name: Release
-#      uses: softprops/action-gh-release@v1
-#      with:
-#        body_path: body.md
-#        tag_name: ${{ env.REVISION }}
-#      env:
-#        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: body.md
+        tag_name: ${{ env.REVISION }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
