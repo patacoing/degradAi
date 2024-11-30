@@ -7,7 +7,10 @@ env:
   AZURE_WORKSPACE: "azure-ml-cpr"
   AZURE_LOCATION: "northeurope"
   AZURE_TAGS: "{}"
+  PYTHON_VERSION: "3.10.15"
 
+permissions:
+  contents: write
 
 jobs:
   unit-test:
@@ -17,10 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.12.6
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10.15"
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install dependencies
         run: |
@@ -39,10 +42,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.12.6
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10.15"
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install dependencies
         run: |
@@ -50,8 +53,12 @@ jobs:
           python -m pip install poetry
           poetry install --with dev
 
+      - name: Download latest model
+        working-directory: train
+        run: ./run_download_model.sh latest ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }}
+
       - name: Run tests
-        run: poetry run pytest tests/unit/
+        run: poetry run pytest tests/integration/
 
   ml-pipeline:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
@@ -62,10 +69,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Python 3.12.6
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
       uses: actions/setup-python@v5
       with:
-        python-version: "3.10.15"
+        python-version: ${{ env.PYTHON_VERSION }}
 
     - name: Install dependencies
       run: |
@@ -92,18 +99,21 @@ jobs:
         DOWNLOAD_PATH: "../app"
       run: |
         MODEL_VERSION=3
-        echo "Downloading model version $MODEL_VERSION"
         ./run_download_model.sh $MODEL_VERSION ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }} 
 
     - name: Check app folder
       run: ls app/model
 
-#    - name: Create bump and changelog
-#      id: cz
-#      uses: commitizen-tools/commitizen-action@master
-#      with:
+    - name: Create bump and changelog
+      id: cz
+      uses: commitizen-tools/commitizen-action@master
+      with:
 #        github_token: ${{ secrets.GIT_TOKEN }}
-#        changelog_increment_filename: body.md
+        changelog_increment_filename: body.md
+        push: false
+
+    - name: List files
+      run: ls
 #
 #    - name: Release
 #      uses: softprops/action-gh-release@v1
