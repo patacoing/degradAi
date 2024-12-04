@@ -27,5 +27,9 @@ poetry run python azureml_run_download_model.py \
 
 cd $DOWNLOAD_PATH
 mkdir -p model/
+echo "Copying model files to model/"
 cp $MODEL_NAME/*.keras model/
+echo "Writing model version to model/model_version"
+echo "$MODEL_VERSION" > model/model_version
+echo "Removing $MODEL_NAME"
 rm -rf $MODEL_NAME
