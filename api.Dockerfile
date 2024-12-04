@@ -27,6 +27,5 @@ WORKDIR /app
 
 COPY --from=builder /venv /venv
 COPY ./app ./app
-COPY degradai.keras ./degradai.keras
 
 CMD ["fastapi", "dev", "app/main.py", "--host", "0.0.0.0"]
