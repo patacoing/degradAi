@@ -1,3 +1,9 @@
+## 0.6.0 (2024-12-04)
+
+### Feat
+
+- **download_model**: write model version
+
 ## 0.5.1 (2024-12-04)
 
 ### Fix
