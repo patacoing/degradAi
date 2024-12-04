@@ -132,6 +132,8 @@ jobs:
 
       - name: Download latest model
         working-directory: train
+        env:
+          DOWNLOAD_PATH: "../app"
         run: ./run_download_model.sh latest ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }}
 
       - name: Run tests
@@ -167,6 +169,8 @@ jobs:
 
       - name: Download latest model
         working-directory: train
+        env:
+          DOWNLOAD_PATH: "../app"
         run: ./run_download_model.sh latest ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }}
 
       - name: Build docker image
