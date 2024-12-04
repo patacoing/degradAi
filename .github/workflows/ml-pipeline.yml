@@ -193,7 +193,7 @@ jobs:
       - name: Push docker image
         run: |
           MODEL_VERSION=$(cat app/model/model_version)
-          docker push ${{ env.DOCKER_REGISTRY }}/degradai:$MODEL_VERSION
+          docker push ${{ env.DOCKER_REGISTRY }}/patacoing/degradai/degradai:$MODEL_VERSION
 
   deploy-to-azure:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
