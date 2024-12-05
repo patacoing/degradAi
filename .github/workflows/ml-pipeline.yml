@@ -215,4 +215,4 @@ jobs:
           creds: ${{secrets.AZURE_CREDENTIALS}}
 
       - name: Deploy container
-        run: az container create --resource-group ${{ env.AZURE_RESOURCE_GROUP}} --name ${{ env.AZURE_WEBAPP_NAME }} --dns-name-label ${{ env.AZURE_WEBAPP_NAME }} --image ${{ env.DOCKER_REGISTRY }}/patacoing/degradai --ports 8000
+        run: az container create --resource-group ${{ env.AZURE_RESOURCE_GROUP}} --name ${{ env.AZURE_WEBAPP_NAME }} --dns-name-label ${{ env.AZURE_WEBAPP_NAME }} --image ${{ env.DOCKER_REGISTRY }}/patacoing/degradai --ports 8000 --os-type Linux
