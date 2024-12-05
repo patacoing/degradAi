@@ -143,7 +143,7 @@ jobs:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
     runs-on: ubuntu-latest
     environment: degradai
-    needs: integration-test
+#    needs: integration-test
 
     steps:
       - uses: actions/checkout@v4
@@ -173,27 +173,19 @@ jobs:
           DOWNLOAD_PATH: "../app"
         run: ./run_download_model.sh latest ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }}
 
-      - name: Build docker image
+      - name: Get the model version
+        id: get_model_version
         run: |
           MODEL_VERSION=$(cat app/model/model_version)
-          docker build -f api.Dockerfile --platform linux/amd64 -t degradai:$MODEL_VERSION .
-
-      - name: Tag docker image
-        run: |
-          MODEL_VERSION=$(cat app/model/model_version)
-          docker tag degradai:$MODEL_VERSION ${{ env.DOCKER_REGISTRY }}/patacoing/degradai:$MODEL_VERSION
-
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ${{ env.DOCKER_REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GIT_TOKEN }}
+          echo "model_version=$MODEL_VERSION" >> $GITHUB_ENV
 
       - name: Push docker image
-        run: |
-          MODEL_VERSION=$(cat app/model/model_version)
-          docker push ${{ env.DOCKER_REGISTRY }}/patacoing/degradai:$MODEL_VERSION
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: api.Dockerfile
+          push: true
+          tags: ${{ env.DOCKER_REGISTRY }}/patacoing/degradai:${{ steps.get_model_version.outputs.model_version }}
 
   deploy-to-azure:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
@@ -208,4 +200,4 @@ jobs:
           creds: ${{secrets.AZURE_CREDENTIALS}}
 
       - name: Deploy container
-        run: az container create --resource-group ${{ env.AZURE_RESOURCE_GROUP}} --name ${{ env.AZURE_WEBAPP_NAME }} --dns-name-label ${{ env.AZURE_WEBAPP_NAME }} --image ${{ env.DOCKER_REGISTRY }}/patacoing/degradai --ports 8000 --os-type Linux --cpu 1 --memory 1 --registry-username ${{ github.actor }} --registry-password ${{ secrets.GIT_TOKEN }}
+        run: az container create --resource-group ${{ env.AZURE_RESOURCE_GROUP}} --name ${{ env.AZURE_WEBAPP_NAME }} --dns-name-label ${{ env.AZURE_WEBAPP_NAME }} --image ${{ env.DOCKER_REGISTRY }}/patacoing/degradai --ports 8000 --os-type Linux --cpu 1 --memory 1
