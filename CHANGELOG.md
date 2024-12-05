@@ -1,3 +1,23 @@
+## 0.7.0 (2024-12-05)
+
+### Feat
+
+- **ci**: working
+- **ci**: working
+
+### Fix
+
+- **ci**: fetch tags
+- **version**: poetry version was updated
+- **dockerfile**: export port
+- **dockerfile**: export port
+- **ci**: wrong image name
+- **ci**: wrong image name
+- **ci**: wrong image name
+- **ci**: wrong image name
+- **ci**: wrong image name
+- **ci**: wrong image name
+
 ## 0.6.4 (2024-12-05)
 
 ### Fix
