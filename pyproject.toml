@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "degradai"
-version = "0.6.5"
+version = "0.6.4"
 description = ""
 authors = ["patacoing <romain.lefebvre1104@gmail.com>"]
 readme = "README.md"
