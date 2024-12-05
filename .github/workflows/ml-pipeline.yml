@@ -177,7 +177,8 @@ jobs:
         id: get_model_version
         run: |
           MODEL_VERSION=$(cat app/model/model_version)
-          echo "model_version=$MODEL_VERSION" >> $GITHUB_ENV
+          echo "model_version=$MODEL_VERSION"
+          echo "model_version=$MODEL_VERSION" >> $GITHUB_OUTPUT
 
       - name: Push docker image
         uses: docker/build-push-action@v4
