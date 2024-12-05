@@ -45,8 +45,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
     - name: Set up Python ${{ env.PYTHON_VERSION }}
       uses: actions/setup-python@v5
@@ -74,34 +72,6 @@ jobs:
     - name: Run pipeline
       working-directory: train
       run: ./run_AzureML.sh ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ env.AZURE_TAGS }}
-
-    - name: Download model
-      working-directory: train
-      env:
-        DOWNLOAD_PATH: "../app"
-      run: |
-        MODEL_VERSION=$(cat ../app/model/model_version)
-        ./run_download_model.sh $MODEL_VERSION ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }} 
-
-    - name: Check app folder
-      run: ls app/model
-
-    - name: Create bump and changelog
-      id: cz
-      uses: commitizen-tools/commitizen-action@master
-      with:
-        github_token: ${{ secrets.GIT_TOKEN }}
-        changelog_increment_filename: body.md
-        push: true
-
-    - name: Release
-      uses: softprops/action-gh-release@v1
-      with:
-        body_path: body.md
-        tag_name: ${{ env.REVISION }}
-        files: app/model/degradai.keras
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
   integration-test:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
@@ -139,6 +109,59 @@ jobs:
 
       - name: Run tests
         run: poetry run pytest tests/integration/
+
+  release:
+    if: "!startsWith(github.event.head_commit.message, 'bump:')"
+    runs-on: ubuntu-latest
+    environment: degradai
+    needs: integration-test
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install poetry
+          poetry install --with dev
+
+      - name: azure login
+        uses: azure/login@v1
+        with:
+          creds: ${{secrets.AZURE_CREDENTIALS}}
+
+      - name: Install Azure CLI ML extension
+        run: az extension add --name ml
+
+      - name: Download model
+        working-directory: train
+        env:
+          DOWNLOAD_PATH: "../app"
+        run: ./run_download_model.sh latest ${{ env.AZURE_RESOURCE_GROUP }} ${{ env.AZURE_WORKSPACE }} ${{ env.AZURE_LOCATION }} ${{ secrets.AZURE_SUBSCRIPTION_ID }} ${{ env.DOWNLOAD_PATH }}
+
+      - name: Create bump and changelog
+        id: cz
+        uses: commitizen-tools/commitizen-action@master
+        with:
+          github_token: ${{ secrets.GIT_TOKEN }}
+          changelog_increment_filename: body.md
+          push: true
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: body.md
+          tag_name: ${{ env.REVISION }}
+          files: app/model/degradai.keras
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
   build-deploy-image:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
