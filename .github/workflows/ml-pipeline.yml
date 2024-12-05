@@ -208,6 +208,9 @@ jobs:
         with:
           creds: ${{secrets.AZURE_CREDENTIALS}}
 
+      - name: Install Azure CLI ML extension
+        run: az extension add --name ml
+
       - name: Deploy container
         run: |
           MODEL_VERSION=$(az ml model list --workspace-name ${{ env.AZURE_WORKSPACE }} --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.MODEL_NAME }} --query "max([*].version).to_number(@)")
