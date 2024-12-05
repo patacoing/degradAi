@@ -1,3 +1,10 @@
+## 0.6.5 (2024-12-05)
+
+### Fix
+
+- **ci**: wrong image name
+- **ci**: wrong image name
+
 ## 0.6.4 (2024-12-05)
 
 ### Fix
