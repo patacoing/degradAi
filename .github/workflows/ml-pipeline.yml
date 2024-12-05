@@ -144,7 +144,7 @@ jobs:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
     runs-on: ubuntu-latest
     environment: degradai
-#    needs: integration-test
+    needs: integration-test
 
     steps:
       - uses: actions/checkout@v4
@@ -214,4 +214,4 @@ jobs:
       - name: Deploy container
         run: |
           MODEL_VERSION=$(az ml model list --workspace-name ${{ env.AZURE_WORKSPACE }} --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.MODEL_NAME }} --query "max([*].version).to_number(@)")
-          az container create --resource-group ${{ env.AZURE_RESOURCE_GROUP}} --name ${{ env.AZURE_WEBAPP_NAME }} --dns-name-label ${{ env.AZURE_WEBAPP_NAME }} --image ${{ env.DOCKER_REGISTRY }}/patacoing/degradai:$MODEL_VERSION --ports 8000 --os-type Linux --cpu 1 --memory 1
+          az container create --resource-group ${{ env.AZURE_RESOURCE_GROUP}} --name ${{ env.AZURE_WEBAPP_NAME }} --dns-name-label ${{ env.AZURE_WEBAPP_NAME }} --image ${{ env.DOCKER_REGISTRY }}/patacoing/degradai:$MODEL_VERSION --ports 8000 --os-type Linux --cpu 1 --memory 2
