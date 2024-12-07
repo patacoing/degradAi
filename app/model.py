@@ -41,7 +41,7 @@ class Model:
         train_x, train_y, test_x, test_y = train_images, train_labels, test_images, test_labels
 
         training = Training(train_x, train_y, test_x, test_y)
-        model = training.train(epochs=5, batch_size=32)
+        model = training.train(epochs=10, batch_size=32)
 
         self.model = model
 
