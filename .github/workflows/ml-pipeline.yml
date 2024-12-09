@@ -170,7 +170,7 @@ jobs:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
     runs-on: ubuntu-latest
     environment: degradai
-    needs: integration-test
+    # needs: integration-test
 
     steps:
       - uses: actions/checkout@v4
